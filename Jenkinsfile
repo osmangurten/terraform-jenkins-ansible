@@ -3,7 +3,6 @@ pipeline {
   environment {
     PATH = "${PATH}:${getTerraformPath()}"
   }
-
 stages {
   stage('S3 Create Bucket') {
     steps{
@@ -26,7 +25,6 @@ stages {
       }
   }
 }
-
 def getTerraformPath(){
   tfHome = tool name: 'terraform-12', type: 'org.jenkinsci.plugins.terraform.TerraformInstallation'
   return tfHome
