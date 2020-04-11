@@ -1,11 +1,6 @@
 ---
  - hosts: localhost
-   become: True
-   task:
-     - name: Install boto3
-       pip:
-         name: boto3
-         state: present
+   tasks:
      - name: Create S3 bucket
        s3_bucket:
          name: osmangurten-tf-bucket
